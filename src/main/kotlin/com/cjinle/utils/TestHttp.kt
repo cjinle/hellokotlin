@@ -12,7 +12,7 @@ class TestHttp {
 
     fun sync() {
         val client = OkHttpClient()
-        var request = Request.Builder().url(url).build()
+        val request = Request.Builder().url(url).build()
 
         val response = client.newCall(request).execute()
         println(response.body()?.string())
@@ -20,7 +20,7 @@ class TestHttp {
 
     fun async() {
         val client = OkHttpClient()
-        var request = Request.Builder().url(url).build()
+        val request = Request.Builder().url(url).build()
 
         client.newCall(request).enqueue(object: Callback{
             override fun onFailure(call: Call, e: IOException) {

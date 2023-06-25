@@ -1,7 +1,6 @@
 package com.cjinle.utils
 
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 
 class TestGson {
     fun run() {
