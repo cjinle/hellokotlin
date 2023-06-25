@@ -4,6 +4,9 @@ class TestBasic {
     fun run() {
         println("test basic...")
         _runOther()
+
+//        _runCase()
+
     }
 
     fun _runOther() {

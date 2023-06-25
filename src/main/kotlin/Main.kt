@@ -1,7 +1,7 @@
-import com.cjinle.utils.TestBasic
+import com.cjinle.utils.*
 
 fun main() {
-    val obj = TestBasic()
+    val obj = TestGson()
 
     obj.run()
 
