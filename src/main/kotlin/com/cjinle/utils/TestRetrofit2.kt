@@ -50,7 +50,7 @@ data class MemberInfo (
     var nickname: String,
     @SerializedName("sex")
     var gender: Int,
-    var money: Int,
+    val money: Int,
 )
 interface ApiService {
     @GET("/test/api.php")

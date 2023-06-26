@@ -2,6 +2,7 @@ package com.cjinle.utils
 
 import com.google.gson.Gson
 
+
 class TestGson {
     fun run() {
         println("test gson ...")
@@ -14,6 +15,11 @@ class TestGson {
         val memberInfo2 = gson.fromJson(jsonStr, MemberInfo::class.java)
         memberInfo2.id = 333
         println(memberInfo2)
+
+        val memberInfo3 = memberInfo.copy(id=444, money=123123)
+        println(memberInfo3)
+
+
 
     }
 }

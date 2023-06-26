@@ -1,11 +1,32 @@
 package com.cjinle.utils
 
+import java.util.Random
+
 class TestBasic {
     fun run() {
         println("test basic...")
-        _runOther()
-
+//        _runOther()
 //        _runCase()
+//        RandNum().gen()
+        RandNum.gen()
+        RandNum.gen2()
+
+        _runObject()
+
+
+    }
+
+    fun _runObject() {
+        val level = 1
+        var vipLevel = object {
+            var Lv1: Int = level
+            var Lv2: Int = level shl 1
+            var Lv3: Int = level shl 2
+        }
+
+        println("lv1: ${vipLevel.Lv1}, lv2: ${vipLevel.Lv2}, lv3: ${vipLevel.Lv3}")
+
+        MyUtils.hello("kotlin")
 
     }
 
@@ -48,7 +69,7 @@ class TestBasic {
         // copy() function
         println(user.copy())
         println(user === user.copy())
-        println(user.copy("Max"))
+        println(user.copy(name = "Max"))
         println(user.copy(id = 3))
 
         println("name = ${user.component1()}")
@@ -86,30 +107,21 @@ class TestBasic {
     }
 
     fun _ranges() {
-        for (i in 0..3) {
-            print(i)
-        }
+        for (i in 0..3) print(i)
 
         println()
 
-        for (i in 0 until  3) {
-            print(i)
-        }
+        for (i in 0 until  3) print(i)
 
         println()
 
-        for (i in 2..8 step 2) {
-            print(i)
-        }
+        for (i in 2..8 step 2) print(i)
 
         println()
 
-        for (i in 3 downTo 0) {
-            print(i)
-        }
+        for (i in 3 downTo 0) print(i)
 
         println()
-
     }
 
     fun _eq() {
@@ -132,4 +144,31 @@ enum class State {
 data class User(val name: String, val id: Int) {
     override fun equals(other: Any?) =
         other is User && other.id == this.id
+}
+
+class RandNum {
+    fun gen() {
+        var rand = Random()
+        for (i in 1..10) {
+            print("${rand.nextInt()} ")
+
+        }
+//        println(Random().nextInt())
+    }
+
+    companion object {
+        fun gen() {
+            println(Random().nextInt())
+        }
+
+        fun gen2() {
+            println(Random().nextInt())
+        }
+    }
+}
+
+object MyUtils {
+    fun hello(name: String) {
+        println("hello $name")
+    }
 }
