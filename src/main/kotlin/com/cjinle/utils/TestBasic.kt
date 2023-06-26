@@ -8,12 +8,34 @@ class TestBasic {
 //        _runOther()
 //        _runCase()
 //        RandNum().gen()
-        RandNum.gen()
-        RandNum.gen2()
+//        RandNum.gen()
+//        RandNum.gen2()
+//        _runObject()
+//        _runEmpty()
 
-        _runObject()
+//        _for()
+        _runCollection()
+    }
 
 
+    fun _runCollection() {
+        val names = mutableSetOf<String>("Jim")
+        names.add("Jack")
+        names.add("Tom")
+        names.remove("xx")
+
+//        names.clear()
+
+        println("set size: ${names.count()}")
+
+        names.forEach { println(it) }
+    }
+
+    fun _runEmpty() {
+        val kv = KV(k="foo", v=null)
+        println(kv)
+        println(kv.v?:"xx")
+        println("xxx")
     }
 
     fun _runObject() {
@@ -87,7 +109,6 @@ class TestBasic {
         println("state: $message")
     }
 
-
     fun cases(obj: Any) {
         when(obj) {
             1 -> println("One")
@@ -103,6 +124,10 @@ class TestBasic {
 
         for (cake in cakes) {
             println("cake: $cake")
+        }
+
+        cakes.forEach {
+            println(it)
         }
     }
 
@@ -151,7 +176,6 @@ class RandNum {
         var rand = Random()
         for (i in 1..10) {
             print("${rand.nextInt()} ")
-
         }
 //        println(Random().nextInt())
     }
