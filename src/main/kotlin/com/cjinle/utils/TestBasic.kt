@@ -35,7 +35,6 @@ class TestBasic {
         val kv = KV(k="foo", v=null)
         println(kv)
         println(kv.v?:"xx")
-        println("xxx")
     }
 
     fun _runObject() {
